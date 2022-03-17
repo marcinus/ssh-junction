@@ -1,11 +1,18 @@
 # High-level design
 
+## System goal
+
+The goal of the system is to provide a centralized management endpoint which will expose up-to-date user access data and will expire them automatically.
+This will also allow the developers to quickly set up, test, validate and update connection to all the instances, and the sysadmin will have direct control over accesses to instances without the need to log onto each of them.
+
+## Elements
+
 The system should consist of several elements:
 - the central security guard (for example, this could be Jenkins) which is accessible by DEVOPS/security and has access to all instances
 - number of users (developers, QA, devops, release managers etc.) who want to have access to the instances
 - target instances forming groups that form environments.
 
-The goal of the system is to provide a centralized management endpoint which will expose up-to-date user access data and will expire them automatically
+## Benefits
 
 From the security perspective:
 - less potential for information leak as the public key configuration is performed by the central unit (no need to grant password access to end users)
