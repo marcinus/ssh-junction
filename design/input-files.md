@@ -32,8 +32,8 @@ Preferably: create a container whenever possible and then have items as data
 
 ## Example file
 
-- [instances.yaml](sample/instances.yaml) contains an example of instances specification
-- [credentials.yaml](sample/credentials.yaml) contains an example of credentials specification
+- [instances.yaml](samples/instances.yaml) contains an example of instances specification
+- [credentials.yaml](samples/credentials.yaml) contains an example of credentials specification
 
 
 
