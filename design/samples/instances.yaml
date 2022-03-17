@@ -1,3 +1,6 @@
+# This file is common for all parties accessing instances.
+# Although its contents can be adjusted for a specific user (eg. a dev could not be authorized to get information about the )
+
 options:
   # Enable fingerprint validation by default
   - validateFingerprint: true
