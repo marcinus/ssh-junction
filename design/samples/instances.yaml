@@ -1,0 +1,154 @@
+options:
+  # Enable fingerprint validation by default
+  - validateFingerprint: true
+  # Default fingerprint
+  - fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAAEVOykbGTZRw5qqZ8g3KyOCqiYRdX28W6pMCkH9Rihwn
+environments:
+  - name: local
+    options:
+        # Disable fingerprint validation for this environment (better not do that though!)
+      - validateFingerprint: false
+    groups:
+     - name: a
+       instances:
+         - name: 1
+           ip: 192.168.13.1
+     - name: b
+       instances:
+         - name: 1
+           ip: 192.168.13.2
+  - name: dev
+    options:
+      # Shared fingerprint for all instances within DEV
+      - fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAA8zQao301HfQWmL5JlN8emOy1y75BgGPPuSBVAIMhKpc
+    groups:
+      - name: a
+        instances:
+          - name: 1
+            ip: 10.51.17.1
+          - name: 2
+            ip: 10.51.17.2
+      - name: b
+        instances:
+           - name: 1
+             ip: 10.51.18.1
+           - name: 1
+             ip: 10.51.18.2
+      - name: c
+        instances:
+           - name: 1
+             ip: 10.51.19.1
+           - name: 1
+             ip: 10.51.19.2
+  - name: test
+    groups:
+      - name: a
+        options:
+          # Shared fingerprint for all instances within group A on environment test
+          - fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAA7XjVLKQBwc8v21ARxPDzHpTZ0xymG6MeHOA9EiAjgIy
+        instances:
+          - name: 1
+            ip: 10.54.17.1
+          - name: 2
+            ip: 10.54.17.2
+      - name: b
+        instances:
+           - name: 1
+             ip: 10.54.18.1
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAAM1DO7r7rCpNvuc93RyqSTOcuywypAt1Ix3US7Qpli59
+           - name: 1
+             ip: 10.54.18.2
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAA5YQFgN3TJmz3yp8yo18g22xPnZvZ1xf83nRoMhoKTMl
+      - name: c
+        # Default fingerprint used
+        instances:
+           - name: 1
+             ip: 10.55.19.1
+           - name: 1
+             ip: 10.55.19.2
+  - name: stage
+    groups:
+      - name: a
+        instances:
+          - name: 1
+            ip: 95.16.17.1
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAAcQdh1QhLtqhCOIkgtqPSgcLgGzwxV8na0hybqKWxBJ5
+          - name: 2
+            ip: 95.16.17.2
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAAryLSMIw76fk1gdEpPAmcRYD1l5KfI0J3MESpkFQHeBY
+      - name: b
+        instances:
+           - name: 1
+             ip: 95.16.18.1
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAAkO59btaIXVkaJFApExdfodtIAk7MWfCP7XCTzCO7fzf
+           - name: 1
+             ip: 95.16.18.2
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAAAKcwcw2sTrISWfhL1rbMgVCeeTZqOSr7UzG7ecuEHWb
+      - name: c
+        instances:
+           - name: 1
+             ip: 95.16.19.1
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAA108axyeUGHh9OCWgVHcmADFNYCeOQvZzXuuQWpSaxgI
+           - name: 1
+             ip: 95.16.19.2
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAAMyNtEOe2gJNxlGOVjwcS8ur3sk7oOE0iljAwB2b0D2Q
+      - name: d
+        instances:
+           - name: 1
+             ip: 95.17.19.1
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAA7Sn218R1OCh9fC1wLJetHEpwLnFcHWPn2SFh0KWEciX
+           - name: 1
+             ip: 95.17.19.2
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAAkmBT3zsWUeojBNrKvUWmdNjn5D3IuCourIpojEMWUPp
+  - name: prod
+    groups:
+      - name: a
+        instances:
+          - name: 1
+            ip: 96.16.17.1
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAADw2gXralfLrr0LuTJkmKYDZtR2kS2jxhbzf2bcROILB
+          - name: 2
+            ip: 96.16.17.2
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAAEuMa8iAbPasXOds6JIUGOCFuo0t1Pt4YYV2qnApabg6
+      - name: b
+        instances:
+           - name: 1
+             ip: 96.16.18.1
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAAkQ2BWx7SU2Zr22ZRohZKN2Wx6LIDGgQ2tCPnmdkTerv
+           - name: 1
+             ip: 96.16.18.2
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAAYF70KMehdY33XYr8h6FzcrXF4HYHpQCfn8KX9K7kbMf
+      - name: c
+        instances:
+           - name: 1
+             ip: 96.16.19.1
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAAEr6Q3nSqs2RhztpOABWdqFfSGUg7lP90UQL7YFpa2wW
+           - name: 1
+             ip: 96.16.19.2
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAA7bTNIa0f94S3CNzpsFwrS2hQHfshNPYwCLxuLnQu9zP
+      - name: d
+        instances:
+           - name: 1
+             ip: 96.17.19.1
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAAJD4R0xmGCEwBAUWnOTfIL8pzGZmUAyDKgOOf8seyczs
+           - name: 1
+             ip: 96.17.19.2
+             # Per-instance fingerprint specified
+             fingerprint: AAAAC3NzaC1lZDI1NTE5AAAAAZufAKgq6TWfMcDz72kIkc0g6cddnpEL7HcJjDD7H3Sk
