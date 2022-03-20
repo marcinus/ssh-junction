@@ -1,0 +1,5 @@
+envA-groupA-instanceA,userA
+envA-groupA-instanceB
+envA-groupA-*,userAA,sharedKey
+envB-*,,anotherSharedKey
+*,userC,globalKey
