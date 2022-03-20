@@ -36,6 +36,30 @@ The results of the script execution should be:
 - a file that maps key aliases from `environments.csv` file to actual key pairs. Let's call this file `keys.csv` 
 - updated, in-order SSH configuration file .ssh/config
 
-## TODO: Stage 2
+`keys.csv` file structure:
+```
+sharedKey, /home/bob/.ssh/id_ecdsa_sharedKey.pub, /home/bob/.ssh/id_ecdsa_sharedKey
+anotherSharedKey, /home/bob/.ssh/id_ecdsa_anotherSharedKey.pub, /home/bob/.ssh/id_ecdsa_anotherSharedKey
+globalKey, /home/bob/.ssh/id_ecdsa_globalKey.pub, /home/bob/.ssh/id_ecdsa_globalKey
+```
+
+### Considerations
+
+- Can this key generation be parallelized?
+- How to force encryption? Can a single password be used?
+
+## Key regeneration script
+
+TODO: based on the key expiration data
+
+```
+fingerprint,revoked
+fingerprint,
+
+```
+
+## Key upload script (parallel?)
+
+## TODO: Move to Stage 2
 
  - Add an optional argument for the key expiration file `key-expirations.csv` which will allow reusage/regeneration of the old keys.
