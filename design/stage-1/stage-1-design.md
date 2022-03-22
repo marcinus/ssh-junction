@@ -102,3 +102,5 @@ fingerprint,
  
 ## TODO: move to later stages
  - Consider auditing instances for access in order to determine who was using login on what time (given that an account is shared). Restrict sudo access.
+ 
+## TODO: reconsider using ECDSA as it may have some flaws (RSA is more standard?)
