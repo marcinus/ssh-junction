@@ -35,6 +35,7 @@ AC:
 
 - Required argument with default value for `environments.csv` file
 - Optional argument for the already existing `keys.csv` file
+- Optional argument for overwrite strategy if a key with given alias exists (only when `keys.csv` is provided)
 - Required argument with default value for the SSH keys root directory
 
 ### Result 
